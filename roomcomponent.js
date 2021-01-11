@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 const Cell = ({ description, image }) => {
     return (
         <View style={styles.main}>
-            <Image source={image} style={{width: 80, height: 80, marginTop: 10}} />
+            <Image source={image} style={{width: 70, height: 70, marginTop: 10 }} />
             <Text style={textStyles.footnote}>{description}</Text>
 
         </View>
@@ -25,8 +25,8 @@ export function RoomComponent({ description, image}) {
 const styles = StyleSheet.create({
     main: {
         backgroundColor: '#1aa195',
-        width: 110,
-        height: 125,
+        width: 100,
+        height: 110,
         alignItems: 'center'
     },
     cells: {

@@ -29,7 +29,7 @@ export default function App() {
         <RoomComponent description="Kitchen" image={kitchenImage}></RoomComponent>
       </View>
       <Text style={textStyles.title}>Devices</Text>
-      <View style={{ padding: 20 }}>
+      <View style={{ paddingLeft: 20, paddingRight: 20 }}>
         <DeviceComponent description="Living Room Lamp" state={deviceOne} updateState={setDeviceOne} counter={counter} updateCounter={setCounter}></DeviceComponent>
         <DeviceComponent description="Living Room Lamp" state={deviceTwo} updateState={setDeviceTwo} counter={counter} updateCounter={setCounter}></DeviceComponent>
         <DeviceComponent description="Heater" state={deviceThree} updateState={setDeviceThree} counter={counter} updateCounter={setCounter}></DeviceComponent>
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   },
   roomContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     padding: 10,
   }
 
