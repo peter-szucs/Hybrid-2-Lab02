@@ -19,16 +19,20 @@ const LightAndName = ({ description, stateColor }) => {
     }
 }
 
-const OnOffButtons = ({ updateState, counter, updateCounter }) => {
+const OnOffButtons = ({ state, updateState, counter, updateCounter }) => {
     return (
         <View style={styles.vertical}>
             <Button style={styles.buttons} title="On" onPress= {() => {
                 updateState(true)
-                updateCounter(counter + 1)
+                if (!state) {
+                    updateCounter(counter + 1)
+                } 
             }} />
             <Button style={styles.buttons} title="Off" onPress= {() => {
                 updateState(false)
-                updateCounter(counter - 1)
+                if (state) {
+                    updateCounter(counter - 1)
+                }
             }} />
         </View>
     )
@@ -40,7 +44,7 @@ export function DeviceComponent({ description, state, updateState, counter, upda
             <View style={styles.main}>
                 <View style={styles.horizontal}>
                     <LightAndName description={description} stateColor={state}></LightAndName>
-                    <OnOffButtons updateState={updateState} counter={counter} updateCounter={updateCounter}></OnOffButtons>
+                    <OnOffButtons state={state} updateState={updateState} counter={counter} updateCounter={updateCounter}></OnOffButtons>
                 </View>
             </View>
         </View>
